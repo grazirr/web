@@ -1,0 +1,186 @@
+* {
+
+    margin: 0;
+    padding: 0;
+}
+
+a {}
+
+.header {
+    background: #f988ff;
+    padding-inline: 16px;
+    /* padding esquerdo e direito */
+
+}
+
+/*
+
+VGA = 640 X 480PX
+HD = 1280 X 720PX
+Full HD = 1920 X 1080PX
+
+*/
+
+
+.nav {
+
+    height: 70px;
+    max-width: 1280px;
+    /* HD */
+    margin-inline: auto;
+    /* margem automática à esquerda e direita */
+
+    /* flex padrão = row = linha */
+    display: flex;
+    /* centraliza os elementos  dentro do nav */
+    justify-content: space-between;
+    /* centraliza os elementos  verticalmente dentro da nav */
+    align-items: center;
+
+}
+
+.logo-softgraf {
+    width: 145px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+}
+
+.nav-list a {
+    font-size: 18px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+    color: #ffffff;
+    /* aumenta a area vertical do clique */
+    padding-block: 16px;
+
+}
+
+.nav-list li a:hover {
+    color:aqua;
+
+}
+
+.conteudo {
+    /* 100% altura da tela - altura da barra de navegaçao */
+    height: calc(100vh - 70px);
+
+    background: center / cover no-repeat url(bg.jpg);
+
+}
+
+/* configuração do botão hamburguer (sanduiche) */
+.hamburguer {
+    display: none;
+    background: none;
+    border: none;
+    /* desenha a linha superior do hamburguer*/
+    border-top: 3px solid #ffffff;
+    cursor: pointer;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+    content: " ";
+    display: block;
+    background: #ffffff;
+    width: 30px;
+    height: 3px;
+    margin-top: 5px;
+    transition: 0.2s;
+
+    position: relative;
+}
+
+/* estes estilos serão usados apenas com tela do tamanho ate 576px */
+@media (max-width: 576px) {
+
+    /* tamanho small (sm) do bootstrap*/
+    .hamburguer {
+        display: block;
+        /* exibe o botao hamburguer*/
+        z-index: 1;
+    }
+
+    .nav-list {
+        /* fia posição e não permite que o elemento se mova*/
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        /* reposiciona os menus em coluna */
+        flex-direction: column;
+        /* centraliza verticalmente */
+        justify-content: space-around;
+        /* centraliza horizontalmente */
+        align-items: center;
+        /* remove espaçamento entre menus */
+        gap: 0;
+
+        background: #f988ff;
+        /*                 raio      x    y */
+        clip-path: circle(100px at 90% -15%);
+        transition: 1s ease-out;
+        /* com final lento*/
+
+
+    }
+
+    .nav-list a {
+        font-size: 24px;
+        /* esconde os links do menu antes do círculo ser expandido*/
+        opacity: 0;
+        transition: 1s ease-out;
+    }
+
+    .nav-list li:nth-child(1) a {
+        transition: 0.5s 0.2s;
+    }
+
+    .nav-list li:nth-child(2) a {
+        transition: 0.5s 0.4s;
+
+    }
+
+    .nav-list li:nth-child(3) a {
+        transition: 0.5s 0.6s;
+
+    }
+
+
+    /* Estilos ativos (active) */
+    .nav.active .nav-list {
+        clip-path: circle(1500px at 90% -15%);
+
+    }
+
+    .nav.active .nav-list a {
+        opacity: 1;
+    }
+
+    .nav.active .hamburguer {
+        /* esconde a borda do topo do botao */
+        border-top-color: transparent;
+        position: fixed;
+        top: 26px;
+        right: 16px;
+    }
+
+    /* rotaciona a linha inferior do botao */
+    .nav.active .hamburguer::before {
+        transform: rotate(135deg);
+    }
+
+    .nav.active .hamburguer::after {
+        transform: rotate(-135deg);
+        /* reposiciona a linha para formar o x */
+        top: -8px;
+        /* sobre 7px */
+
+    }
+}
