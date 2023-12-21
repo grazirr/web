@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    width: 100vw;
+    background-color: aqua;
+    display: flex;
+    flex-direction: row;
+    /* se não couber a linha */
+
+    flex-wrap: wrap;
+
+    /* justificação horizontal */
+    justify-content: center;
+
+}
+
+.nav li {
+    list-style-type: none;
+    padding: 10px 20px;
+    
+}
+
+.nav li a {
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500 ;
+    font-size: 1.2rem ;
+}
+
+.nav li:hover{
+    background-color: blueviolet;
+}
+
+.nav li a:hover{
+    color: red; 
+    border-bottom: 2px solid orange;
+
+}
+
