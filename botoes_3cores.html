@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muda Cor</title>
+
+   
+
+   <script>
+
+    function mudaCor(button,cor){
+      var h1 = document.getElementById("msg")
+           h1.innerHTML =button.innerText
+           h1.style.color =cor
+           button.style.color=cor
+
+
+    }
+
+    
+
+   </script>
+</head>
+<body>
+
+    <h1 id="msg">Hello World</h1>
+    <button  onpointerover="mudaCor(this,'red')">Vermelho</button>
+    <button  onpointerover="mudaCor(this,'blue')">Azul</button>
+    <button  onpointerover="mudaCor(this,'green')">Verde</button>
+    <button  onpointerover="mudaCor(this,'green')">Laranja</button>
+    
+    
+</body>
+</html>
