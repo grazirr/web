@@ -1,0 +1,109 @@
+header {
+    background-color: blueviolet;
+    color: #ffffff;
+    height: 15vh;
+    font-size: 2em;
+    text-align: center;
+    line-height: 15vh;
+
+}
+
+#entrada-dados {
+    
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+}
+
+.entrada-texto {
+
+    flex: 1;       /* todos os elemento do mesmo tamaho */
+    margin: 5px;
+    height: 35px;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: blueviolet;
+    
+}
+
+.entrada-texto:focus {
+    border-color: #8d256c
+}
+
+.botao-enviar {
+    flex: 1;
+    margin: 5px;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #8d256c;
+    cursor: pointer;
+  
+}
+
+.botao-enviar:hover {
+    background-color: #9d2e9b;
+    border-color: #bd4eba;
+    color: #ffffff;
+}
+
+#tabela {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+#tabela th {
+background-color: #9d2e9b;
+color: #ffffff;
+font-weight: 100;
+
+border: 1px solid #ffffff;
+padding: 10px;
+
+}
+
+#tabela td, th {
+    border: 1px solid #8d256c;
+    padding: 10px;
+}
+
+#tabela td {
+    padding: 5px;
+
+    }
+
+    /* linhas ímpares da linha */
+    #tabela tr:nth-child(even){ /* even ou odd */
+        background-color: #9157CD;
+    }
+
+    /* linhas pares da tabela*/
+    #tabela tr:nth-child(odd){ /* even ou odd */
+        background-color: #f988ff;
+    
+    }
+
+    #tabela tr:hover {
+        background-color: #9d2e9b;
+    }
+
+.botao-remover {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    border-width: 0;
+    background: transparent;
+    cursor: pointer;
+    color:#8d256c;
+    transition: 0.5s;
+
+    }
+
+    .botao-remover:hover {
+        background-color: #cbe5d3;
+        padding: 5px;
+        color:#8d256c;
+    }
+
